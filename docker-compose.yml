@@ -10,14 +10,11 @@ services:
     ports:
       - "${PORT:-9621}:9621"
     volumes:
-      # OVO SU NAMED VOLUMES - Ovi podaci se NIKADA ne brišu pri redeployu
       - aina_storage_data:/app/data/aina_storage
       - aina_inputs_data:/app/data/inputs
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
-
-# Deklaracija trajnih Docker sefova
 volumes:
   aina_storage_data:
   aina_inputs_data:

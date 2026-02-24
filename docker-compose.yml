@@ -12,8 +12,6 @@ services:
     volumes:
       - aina_storage_data:/app/data/aina_storage
       - aina_inputs_data:/app/data/inputs
-      - ./config.ini:/app/config.ini
-      - ./.env:/app/.env
     env_file:
       - .env
     restart: unless-stopped

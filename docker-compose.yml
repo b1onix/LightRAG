@@ -10,14 +10,11 @@ services:
     ports:
       - "${PORT:-9621}:9621"
     volumes:
-      - aina_storage_data:/app/data/aina_storage
-      - aina_inputs_data:/app/data/inputs
+      - /home/armin/aina_data:/app/data/aina_storage
+      - /home/armin/aina_inputs:/app/data/inputs
       - /etc/app/gen-lang-client-0048669359-51774bfb1a77.json:/etc/app/gen-lang-client-0048669359-51774bfb1a77.json
     env_file:
       - .env
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
-volumes:
-  aina_storage_data:
-  aina_inputs_data:
